@@ -33,5 +33,17 @@ WARNING: This is a development server. Do not use it in a production deployment.
 
 WSGI - Web Server Gateway Interface. 
 
-        It is a specification that describes how a web server communicates with web applications, and how web applications can be chained together to process one request.
+        It is a specification that describes how a web server communicates with web applications, 
+        and how web applications can be chained together to process one request.
+
+__pycache__
+
+        is a directory that is created by the Python interpreter when it imports a module.
+        It contains the compiled bytecode of the module, which can be used to speed up subsequent imports of the same module.
+
+Command to clean: Pure Python cross-platform pyclean. Clean up your Python bytecode.
+
+        pip install pyclean
+
+        pyclean .
 
