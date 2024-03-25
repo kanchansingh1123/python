@@ -1,0 +1,37 @@
+Steps to setup flask virtual enviroment.
+
+1. Add requirement.txt (specify the packages to be installed)
+2. pip install virtualenv (virtual environment tool will be installed at global/system level)
+3. virtualenv --version (To check the virtual environment version)
+4. virtualenv my_env (T0 create a new virtual environment under my_env folder)
+
+This is (my_env) where Python packages will be installed.
+
+If you want to specify the Python interpreter of your choice, for example, Python 3, it can be done using the following command:
+
+5. virtualenv -p /usr/bin/python3 my_env  (If you want t point different python/python interpreter) 
+
+Select the Python Interpreter in VSCODE - 
+
+    Press Shift + Control + P to open the Command Palette and click on the Python: Select Interpreter.
+
+Activate a Virtual Environment on Windows
+
+6. cd <envname>
+7. Scripts\activate
+
+Activate a virtual environment on Linux
+
+8. source virtualenv_name/bin/activate
+
+Deaactivate virtual environment
+
+9. deactivate (Run this command when virtual enviroment in in active mode)
+
+
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+
+WSGI - Web Server Gateway Interface. 
+
+        It is a specification that describes how a web server communicates with web applications, and how web applications can be chained together to process one request.
+
