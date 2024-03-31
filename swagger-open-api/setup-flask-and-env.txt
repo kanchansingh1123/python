@@ -47,3 +47,21 @@ Command to clean: Pure Python cross-platform pyclean. Clean up your Python bytec
 
         pyclean .
 
+flask-restplus
+
+        Flask-RESTPlus is an extension for Flask that adds support for quickly building REST APIs. 
+        Flask-RESTPlus encourages best practices with minimal setup
+
+Flask-RESTplus started as a fork of Flask-RESTful
+
+        I've used both, and the only reason we switched to Flask-restplus was the desire to have auto generated Swagger documentation.
+        In my experience, there are no other noticeable differences. Flask-RESTplus started as a fork of Flask-RESTful.
+
+        According to https://github.com/noirbizarre/flask-restplus/issues/593, the Flask Restplus is most probably dead and abandoned.
+        The last commit was on October 1, 2018. It looks like the project is not being actively maintained anymore.
+
+        Therefore, I advise that you use Flask Restful despite the auto generated Swagger docs in Restplus. 
+        Since Restplus is not maintained, it is most likely that the implementation will sooner or later go out of date. 
+        Rather than switching to Restful once Restplus goes out of date, I think starting off with Restful itself would be the better idea here.
+
+        Flask-RESTplus is dead.
