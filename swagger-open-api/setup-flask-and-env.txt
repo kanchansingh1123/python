@@ -3,7 +3,19 @@ Steps to setup flask virtual enviroment.
 1. Add requirement.txt (specify the packages to be installed)
 2. pip install virtualenv (virtual environment tool will be installed at global/system level)
 3. virtualenv --version (To check the virtual environment version)
-4. virtualenv my_env (T0 create a new virtual environment under my_env folder)
+4. virtualenv my_env (To create a new virtual environment under my_env folder)
+
+        Or 
+        
+        python -m venv c:\path\to\myenv (direct installation without virtualenv)
+
+        Or - Using different python
+
+        PathToPython\python -m venv myenv
+
+        Or
+        
+        %PYTHONROOT%\python -m venv myenv
 
 This is (my_env) where Python packages will be installed.
 
