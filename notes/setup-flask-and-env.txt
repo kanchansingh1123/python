@@ -91,4 +91,8 @@ Connexion:
 
 
         pip install "connexion[flask]" 
-        pip install "connexion[swagger-ui]" 
+        pip install "connexion[swagger-ui]"
+
+        http://localhost:5001/api
+
+        http://localhost:5001/api/ui/
