@@ -87,4 +87,8 @@ Connexion:
         https://connexion.readthedocs.io/en/latest/
 
 
-        
+        Note: While using connexion, it is must to install flask, swagger-ui and other libraries using connection
+
+
+        pip install "connexion[flask]" 
+        pip install "connexion[swagger-ui]" 
