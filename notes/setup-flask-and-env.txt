@@ -96,3 +96,5 @@ Connexion:
         http://localhost:5001/api
 
         http://localhost:5001/api/ui/
+
+        connexion uses "uvicorn" server internally
