@@ -77,3 +77,14 @@ Flask-RESTplus started as a fork of Flask-RESTful
         Rather than switching to Restful once Restplus goes out of date, I think starting off with Restful itself would be the better idea here.
 
         Flask-RESTplus is dead.
+
+
+Connexion:
+        Connexion is a modern Python web framework that makes spec-first and api-first development easy. 
+        You describe your API in an OpenAPI (or swagger) specification with as much detail as you want and 
+        Connexion will guarantee that it works as you specified.
+
+        https://connexion.readthedocs.io/en/latest/
+
+
+        
