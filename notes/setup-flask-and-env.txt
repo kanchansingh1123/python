@@ -98,3 +98,13 @@ Connexion:
         http://localhost:5001/api/ui/
 
         connexion uses "uvicorn" server internally
+
+        Based on your specification, Connexion provides the following functionality:
+
+                - Automatic routing to your Python functions
+                - Authentication
+                - Request validation
+                - arameter parsing and injection
+                - Response serialization
+                - Response validation
+                - A Swagger UI console with live documentation and ‘try it out’ feature
