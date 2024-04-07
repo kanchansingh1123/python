@@ -2,6 +2,8 @@
 
 from datetime import datetime
 
+from flask import abort, jsonify, request, json
+
 def get_timestamp():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -22,6 +24,25 @@ PEOPLE = {
         "timestamp": get_timestamp(),
     }
 }
+
+def create():
+    req_obj = request.get_data()
+    if req_obj:
+        body_data = json.loads(req_obj)
+        lname = body_data.get("lname")
+        fname = body_data.get("fname")
+        if lname and lname not in PEOPLE:
+            PEOPLE[lname] = {
+                "lname": lname,
+                "fname": fname,
+                "timestamp": get_timestamp(),
+            }
+            return PEOPLE[lname], 201
+        else:
+            abort(
+                406,
+                f"Person with last name {lname} already exists",
+            )
 
 def read_all():
     return list(PEOPLE.values())
