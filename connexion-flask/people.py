@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from flask import abort, jsonify, request, json
+from flask import abort, jsonify, request, json, make_response
 
 def get_timestamp():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -53,4 +53,31 @@ def read_one(lname):
     else:
         abort(
             404, f"Person with last name {lname} not found"
+        )
+        
+def update(lname):
+    req_obj = request.get_data()
+    if lname in PEOPLE and req_obj:
+        body_data = json.loads(req_obj)
+        fname = body_data.get("fname")
+        if lname in PEOPLE:
+            PEOPLE[lname]["fname"] = fname
+            PEOPLE[lname]["timestamp"] = get_timestamp()
+            return PEOPLE[lname]
+        else:
+            abort(
+                404,
+                f"Person with last name {lname} not found"
+            )
+            
+def delete(lname):
+    if lname in PEOPLE:
+        del PEOPLE[lname]
+        return make_response(
+            f"{lname} successfully deleted", 200
+        )
+    else:
+        abort(
+            404,
+            f"Person with last name {lname} not found"
         )
