@@ -108,3 +108,56 @@ Connexion:
                 - Response serialization
                 - Response validation
                 - A Swagger UI console with live documentation and ‘try it out’ feature
+
+Serializer:
+        To convert complex data types to and from Python data types.
+        Flask-Marshmallow extends the Marshmallow library and provides additional features when you work with Flask.
+        pip install "flask-marshmallow[sqlalchemy]"
+
+        Flask-Marshmallow also installs marshmallow, which provides functionality to serialize and 
+        deserialize Python objects as they flow in and out of your REST API, which is based on JSON.
+
+        Marshmallow converts Python class instances to objects that can be converted to JSON.
+
+SQLAlchemy:
+        SQLAlchemy provides an object-relational model (ORM), which stores each Python object to a database representation of the object’s data.
+
+        You’re going to use SQLite as the database engine to store the PEOPLE data. 
+        SQLite is a widely used relational database management system (RDBMS) that doesn’t need a SQL server to work.
+
+        In contrast to other SQL database engines, SQLite works with a single file to maintain all the database functionality. 
+        Therefore, to use the database, a program just needs to know how to read and write to a SQLite file.
+
+        Python’s built-in sqlite3 module allows you to interact with SQLite databases without any external packages. 
+        This makes SQLite particularly useful when starting new Python projects.
+
+        Start a new Python interactive shell to create the people.db SQLite database:
+
+        import sqlite3
+        conn = sqlite3.connect("people.db")
+        columns = [
+             "id INTEGER PRIMARY KEY",
+             "lname VARCHAR UNIQUE",
+             "fname VARCHAR",
+             "timestamp DATETIME",
+        ]
+        create_table_cmd = f"CREATE TABLE person ({','.join(columns)})"
+        conn.execute(create_table_cmd)
+
+people.db-journal file
+        Such -journal files do not need to (and should not) be distributed.
+        This is because the various journal files represent temporary data (ref. SQLite's Use Of Temporary Disk Files) used by SQLite.
+        In particular a -journal file is a rollback journal.
+
+Interact With the Database:
+        conn = sqlite3.connect("people.db")
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM person")
+        people = cur.fetchall()
+        for person in people:
+                print(person)
+
+
+
+
+
