@@ -119,6 +119,11 @@ Serializer:
 
         Marshmallow converts Python class instances to objects that can be converted to JSON.
 
+        Flask-Marshmallow also installs marshmallow, which provides functionality to serialize and deserialize Python objects as they flow in and out of your REST API, which is based on JSON. 
+        Marshmallow converts Python class instances to objects that can be converted to JSON.
+
+        serializing means converting Python objects, which can contain other Python objects and complex data types, into simpler data structures that can be parsed into JSON data types
+
 SQLAlchemy:
         SQLAlchemy provides an object-relational model (ORM), which stores each Python object to a database representation of the object’s data.
 
@@ -128,8 +133,14 @@ SQLAlchemy:
         In contrast to other SQL database engines, SQLite works with a single file to maintain all the database functionality. 
         Therefore, to use the database, a program just needs to know how to read and write to a SQLite file.
 
+        SQLAlchemy will sanitize user data for you before creating SQL statements. It’s another big advantage and a reason to use SQLAlchemy when working with databases.
+
+        Use SQLAlchemy to save Python objects to your database
+
         Python’s built-in sqlite3 module allows you to interact with SQLite databases without any external packages. 
         This makes SQLite particularly useful when starting new Python projects.
+
+        Using SQLAlchemy allows you to think in terms of objects with behavior rather than dealing with raw SQL.
 
         Start a new Python interactive shell to create the people.db SQLite database:
 
@@ -158,6 +169,12 @@ Interact With the Database:
                 print(person)
 
 
-
+Note:
+	Working with SQLAlchemy’s modeled data inside your programs is very convenient.
+	However, the REST API works with JSON data, and here you can run into an issue with the SQLAlchemy model.
+	
+	Because SQLAlchemy returns data as Python class instances, Connexion can’t serialize these class instances to JSON-formatted data.
+	
+	In this context, serializing means converting Python objects, which can contain other Python objects and complex data types, into simpler data structures that can be parsed into JSON data types.
 
 
