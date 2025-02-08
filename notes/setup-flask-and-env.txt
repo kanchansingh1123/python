@@ -104,7 +104,7 @@ Connexion:
                 - Automatic routing to your Python functions
                 - Authentication
                 - Request validation
-                - arameter parsing and injection
+                - parameter parsing and injection
                 - Response serialization
                 - Response validation
                 - A Swagger UI console with live documentation and ‘try it out’ feature

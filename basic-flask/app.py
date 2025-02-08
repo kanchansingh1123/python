@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     print(request.args)
-    return "Hello world!"
+    print("Hello world! at port : 5001")
+    return "AT port : 5001"
 
 # Passing parameter using request URL
 @app.route("/name/", methods=["GET","POST"])
